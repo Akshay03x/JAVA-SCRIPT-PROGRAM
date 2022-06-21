@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pattern Task</title>
+</head>
+<body>
+	<script type="text/javascript">
+		n = parseInt(prompt("Enter number of rows of pattern : "));
+		//pattern-6 Hollow Diamond
+		for(i=1;i<=n;i++){
+			for(k=n;k>=i;k--){
+				document.write("&nbsp&nbsp&nbsp")
+			}
+			for(j=1;j<=2*i-1;j++){
+				if(j==1 || j==2*i-1)
+					document.write("* ");
+				else
+					document.write("&nbsp&nbsp&nbsp")
+			}
+			document.write("<br/>");
+		}
+		for(i=n;i>=1;i--){
+			if(i==n)
+				continue;
+			for(k=n;k>=i;k--){
+				document.write("&nbsp&nbsp&nbsp")
+			}
+			for(j=2*i-1;j>=1;j--){
+				if(j==1 || j==2*i-1)
+					document.write("* ");
+				else
+					document.write("&nbsp&nbsp&nbsp")
+			}
+			document.write("<br/>");
+		}
+
+	</script>
+</body>
+</html>
