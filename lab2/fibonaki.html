@@ -1,18 +1,23 @@
-import java.util.Scanner;
-public class fibonaki{
-	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);	
-		System.out.println("enter terms:");
-		int x=sc.nextInt();
-
-		int a=0,b=1,c;
-		System.out.print(a+","+b);
-		for(int i=2;i<x;i++){
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+		x=parseInt(prompt("enter number "));
+		 a=0,b=1;
+		document.write(a+","+b)
+		for( i=2;i<x;i++){
 			c=a+b;
-			System.out.print(","+c);
+			document.write(","+c);
 			a=b;
 			b=c;
 			
 		}
-	}
-}
+	</script>
+</body>
+</html>
