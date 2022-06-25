@@ -1,27 +1,18 @@
- <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-</head>
-<body>
-	<script type="text/javascript">
-		a=parseInt(prompt("enter number"))
-		x=0;
-		y=1;
-		var f[]=new f[100];
-		var z;
-		 f[0]=0 
-		 document.write(f[0])
-		 f[1]=1
-		 document.write(f[1])
-		for(i=2;i<a;i++){
-			f[i]=x+y;
-			x=y;
-			z=y
-			document.write(f[i])
+import java.util.Scanner;
+public class fibonaki{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);	
+		System.out.println("enter terms:");
+		int x=sc.nextInt();
+
+		int a=0,b=1,c;
+		System.out.print(a+","+b);
+		for(int i=2;i<x;i++){
+			c=a+b;
+			System.out.print(","+c);
+			a=b;
+			b=c;
+			
 		}
-	</script>
-</body>
-</html>
+	}
+}
