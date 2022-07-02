@@ -1,0 +1,60 @@
+<!-- // demostrate the String function in javaScript -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> String function</title>
+</head>
+<body>
+	<script type="text/javascript">
+		s=prompt("enter String")
+		console.log(s.length);
+
+			i=parseInt(prompt("enter first index"));
+			j=parseInt(prompt("enter last index"));
+			console.log(s.substring(i,j))
+
+           var i = prompt("ENTER THE STRING INITIAL INDEX:");
+           var j = prompt("ENTER THE STRING LAST INDEX:");
+           document.write("Substr = "+s.substr(i,j)+"<b>");
+          
+           var j = prompt("Enter the index, i will give you character");
+           document.write("charAt = "+s.charAt(j));
+
+           document.write("toUpperCase = "+s.toUpperCase()); 
+
+           document.write("toLowerCase = "+s.toLowerCase());
+           
+           var w = prompt("ENTER WhAT YOU WANT TO REPLACE IN STRING");
+           var r = prompt("ENTER A REPLACEMENT STRING");
+           document.write("Replace = "+s.replace(w,r));
+
+           var c = prompt("Enter concat string");
+           document.write("Concat = "+s.concat(c));
+          
+           document.write("Trim = "+s.trim());
+
+           var e = prompt("Enter character you want to check at end of string");
+           document.write("endsWith = "+s.endsWith(e))
+
+           var e = prompt("Enter character you want to check in string");
+           document.write("Includes = "+s.includes(e));
+
+           var n = prompt("Enter character i will give you index");
+           document.write("IndexOf = "+s.indexOf(n));
+
+
+           var n = parseInt(prompt("Enter the times you want to repeat"));
+           document.write("Repeat = "+s.repeat(n));
+
+           document.write("Split = "+s.split('-'));
+
+           var n = prompt("Start with ");
+           document.write("Start with = "+s.startsWith(n));
+
+
+	</script>
+</body>
+</html>

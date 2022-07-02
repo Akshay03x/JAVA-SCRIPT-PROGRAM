@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+			var n = parseInt(prompt("Please enter array size"));
+            var a = new Array();
+            var max=0;
+            for(i=0;i<n;i++)
+            {
+                a[i]=prompt("Please enter number "+(i+1));
+                document.write(a[i]+" ");
+                if(max<a[i])
+                {
+                    max = a[i];
+                }
+            }
+            document.write("<br>"+"MAXIMUM NUMBER IS :"+max);
+	</script>
+</body>
+</html>
