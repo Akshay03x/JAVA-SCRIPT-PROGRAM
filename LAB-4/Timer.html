@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="getEle"></br></br>
+    <button onclick="startCounter()">start</button>
+    <button onclick="stopCounter()">stop</button>
+    <button onclick="resetCounter()">reset</button>
+
+    <h1 id="print">0</h1>
+    <img src="" alt="" id="img">
+
+    <script>
+        var c;
+        var x=0;
+        function startCounter(){
+            getEle1=document.getElementById("getEle");
+            img1=document.getElementById("img");
+            img1.src="";
+            x=getEle1.value;
+            c=setInterval(printCounter,10);
+        }
+
+        function printCounter(){
+            print1=document.getElementById("print");
+            img1=document.getElementById("img");
+            if(x<=0){
+                // clearInterval(c);
+                print1.innerHTML=0;
+                img1.src="timeUP.jfif";
+
+
+            }else{
+                print1.innerHTML=x;
+                x=(x-1/100);
+            }
+        }
+
+        function stopCounter(){
+            print1=document.getElementById("print");
+            clearInterval(c);
+        }
+        function resetCounter(){
+            print1=document.getElementById("print");
+            clearInterval(c);
+            print1.innerHTML=0;
+        }
+    </script>
+</body>
+</html>

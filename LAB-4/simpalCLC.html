@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="first number" id="num1"></br>
+    <input type="text" placeholder="second element" id="num2"></br>
+
+    <button onclick="add()">+</button>
+    <button onclick="sub()">-</button>
+    <button onclick="div()">/</button>
+    <button onclick="mul()">*</button>
+    <h1 id="result">0</h1>
+    <script>
+        function add(){
+            number1=document.getElementById("num1");
+            number2=document.getElementById("num2");
+            result1=document.getElementById("result");
+
+            result1.innerHTML=parseInt(number1.value)+parseInt(number2.value);
+        }
+        function sub(){
+            number1=document.getElementById("num1");
+            number2=document.getElementById("num2");
+            result1=document.getElementById("result");
+
+            result1.innerHTML=parseInt(number1.value)-parseInt(number2.value);
+        }
+        function div(){
+            number1=document.getElementById("num1");
+            number2=document.getElementById("num2");
+            result1=document.getElementById("result");
+
+            result1.innerHTML=parseInt(number1.value)/parseInt(number2.value);
+        }
+        function mul(){
+            number1=document.getElementById("num1");
+            number2=document.getElementById("num2");
+            result1=document.getElementById("result");
+
+            result1.innerHTML=parseInt(number1.value)*parseInt(number2.value);
+        }
+    </script>
+</body>
+</html>
