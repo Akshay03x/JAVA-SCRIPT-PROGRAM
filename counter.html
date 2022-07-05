@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="start" onclick="start()">
+    <input type="button" value="stop" onclick="stop()">
+    <input type="button" value="reset" onclick="reset()">
+
+    <h1 id="counter">asdf</h1>
+
+    <script>
+        var a=0,c;
+        function start(){
+            c=setInterval(display,10);
+        }
+        function stop(){
+            clearInterval(c);
+        }
+        function reset(){
+            a=0;
+            var temp=document.getElementById("counter");
+            temp.innerHTML=0;
+        }
+        function display(){
+            a++;
+            var temp=document.getElementById("counter")
+            temp.innerHTML=a/10;
+        }
+    </script>
+
+</body>
+</html>
