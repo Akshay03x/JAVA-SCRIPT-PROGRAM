@@ -8,7 +8,7 @@
 </head>
 <body>
     <input type="text" id="getEle"></br></br>
-    <button onclick="startCounter()">start</button>
+    <button onclick="startCounter()" id="start">start</button>
     <button onclick="stopCounter()">stop</button>
     <button onclick="resetCounter()">reset</button>
 
@@ -19,11 +19,13 @@
         var c;
         var x=0;
         function startCounter(){
+            var t = document.getElementById("start").disabled=true;
             getEle1=document.getElementById("getEle");
             img1=document.getElementById("img");
             img1.src="";
             x=getEle1.value;
-            c=setInterval(printCounter,10);
+            c=setInterval(printCounter,10);{
+            }
         }
 
         function printCounter(){
