@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="uname" placeholder="enter user name" ></br>
+    <input type="password" placeholder="enter password" id="pass"></br>
+    <button onclick="login()">Login</button>
+    <button onclick="clear()">clear</button>
+    <input type="button" value="showpass" name="" id="show" onclick="showHide()">
+
+    <script>
+            function login(){
+            result=document.getElementById("uname");
+            pass=document.getElementById("pass");
+
+            if(result.value=="akshay"&& pass.value=="chauhan"){
+                document.write("valid user");
+            }
+            else{
+                document.write("invalid user");
+            }
+        }
+        function showHide(){
+			var p=document.getElementById("pass");
+			var c=document.getElementById("show");
+			if(p.type=="password"){
+				p.type="text";
+				c.value="Hide";
+			}
+			else{
+				p.type="Password";
+				c.value="Show";
+			}
+		}
+    </script>
+</body>
+</html>
