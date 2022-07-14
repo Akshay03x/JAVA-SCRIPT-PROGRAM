@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="enter first value" id="fvalue">
+    <input type="text" placeholder="enter second value" id="svalue">
+    <h1 style="font-size: 200px; color: red; background: rgb(232, 215, 26);  float: left; width:500px;  position: absolute;" id="output">1</h1>
+</br>
+    <button onclick="start()" id="st">Start</button>
+    <button onclick="present()" id="pre"> present</button>
+    <button onclick="absent()">absent</button>
+    <button onclick="reset()">reset</button>
+</br>
+</br>
+
+
+    <div id="sabs" style="border:1px solid red ; height: 500px; width:700px; overflow: scroll; float: right;" ></div>
+
+    <script>
+        If=document.getElementById("fvalue");
+        io=document.getElementById("output");
+        Is=document.getElementById("svalue");
+        Ia=document.getElementById("sabs");
+        var c;
+        var x=If.value;
+        var flag=false;
+        function start(){
+            x=If.value;
+            io.innerHTML=x;
+            var t = document.getElementById("st").disabled=true;
+        }
+        function present(){
+            if(flag){
+                x=If.value;
+                flag=true;
+            }else{
+                if(x>=Is.value){
+                    var t = document.getElementById("pre").disabled=true;
+                }
+                else{
+                    x++
+                    io.innerHTML=x;
+                }
+            }
+        }
+        function absent(){
+            x=io.innerHTML;
+            Ia.innerHTML+=x+",";
+        }
+        function reset(){
+            If.value="";
+            Is.value="";
+            var t = document.getElementById("pre").disabled=false;
+            var t = document.getElementById("st").disabled=false;
+        }
+    </script>
+</body>
+</html>

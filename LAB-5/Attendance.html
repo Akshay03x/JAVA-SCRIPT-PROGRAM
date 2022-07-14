@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="allcheck(this)">check ALL</button>
+    <button onclick="allcheck(this)">uncheck ALL</button>
+        </br>
+        <div style="width: 600px; border:1px solid rgb(215, 8, 8) ; height:400px; position:fixed; margin:20px 200px;" id="div1"></div>
+
+    <script>
+        for(i=101;i<=164;i++){
+            document.write('<input type=\"checkbox\" name=\"input\" onclick=\"verify()\" value=\"'+i+'\">'+i+"</br>")
+        }  
+        d=document.getElementById("div1");
+        c=document.getElementsByTagName("input");
+
+        function allcheck(n){
+            if(n.innerHTML=="check ALL"){
+                for(i=0;i<c.length;i++){
+                    c[i].checked="checked";
+                }
+            }
+            else{
+                for(i=0;i<c.length;i++){
+                    c[i].checked=false;
+                }
+            }
+        }
+
+        function verify(){
+            a="";
+            for(i=0;i<c.length;i++){
+                if(c[i].checked==false){
+                    a+=c[i].value+" ,";
+                    d.innerHTML=a.substr(0,a.length-1);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
