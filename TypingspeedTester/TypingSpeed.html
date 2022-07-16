@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button style="width: 50px; height:50px;" onclick="startABC()" id="start">start</button></br>
+    <h1 id="printABC"></h1></br>
+    <!-- <button onclick="A()">A</button> -->
+    <!-- </br> -->
+    <button onclick="restart()">restart</button>
+    <h1 id="counter">0</h1>
+    <script>
+        var a=0,c;
+        var x=65;
+        var code=0;
+        ip=document.getElementById("printABC");
+        function startABC(){
+            ip=document.getElementById("printABC");
+            var storeString="";
+            for (i = 'A'.charCodeAt();i <= 'Z'.charCodeAt(); i++){
+                ip.innerHTML+=String.fromCharCode(i);
+            }
+            // ip.innerHTML='Aello  from jadu'
+            ip.innerHTML+='-'
+            var t = document.getElementById("start").disabled=true;
+            ip.style.color='red';
+            startCounter();
+        }
+
+        window.onkeypress = function(event){
+            storeString=ip.innerHTML;
+            // code=storeString.charAt(0).charCode();
+            // console.log(storeString.charAt(0));
+            if (event.keyCode ===x) {
+                    storeString=storeString.substring(1);
+                    ip.innerHTML=storeString;
+                    console.log(ip.innerHTML);  
+                    if(ip.innerHTML=='-'){
+                        stop();
+                    }
+                    x++;
+            }
+        }
+
+        function startCounter(){
+            c=setInterval(display,10);
+        }
+
+        function display(){
+            a++;
+            var temp=document.getElementById("counter")
+            temp.innerHTML=a/100;
+        }
+
+        function stop(){
+            clearInterval(c);
+        }
+
+        function restart(){
+            var temp=document.getElementById("counter");
+            var t = document.getElementById("start").disabled=false;
+            clearInterval(c);
+            temp.innerHTML=0;
+            ip.innerHTML="";
+        }
+
+    </script>
+</body>
+</html>
