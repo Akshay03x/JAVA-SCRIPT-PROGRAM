@@ -1,0 +1,32 @@
+<!-- 9. WAP to print prime numbers between the two given numbers -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		a=parseInt(prompt("enter number"))//inputs
+		b=parseInt(prompt("enter second number"))
+		for (j=a;j<=b;j++)// loop for two numbers
+		{
+			falag=0;
+			for(i=2;i<j;i++)//logic of prime number
+			{
+				if(j%i==0){
+					falag=1;
+				}
+			}
+			if(falag==1){
+				document.write("");
+			}
+			else{
+				document.write(j+",");
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!-- WAP to demonstrate the use of various inbuilt string functions like charAt(), charCodeAt(), 
+startsWith(), endsWith(), includes(), indexOf(), lastIndexOf(), match(), repeat(), replace("", ""), 
+search(), split(), substr(start, length), substring(start, end), toString(), trim(). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>execute One By One </h1>
+
+    <script>
+        var j = prompt("Enter the index, i will give you character");
+        document.write("charAt = "+s.charAt(j));//given character of specific index
+
+        text = "HELLO WORLD";
+        code = text.charCodeAt(0);//charCodeAt() returns the Unicode of the character at a specified position in a string.
+
+        text = "HELLO WORLD";
+        var n = prompt("Start with ");
+        document.write("Start with = "+text.startsWith(n));// returns true or false
+
+        text = "HELLO WORLD";
+        var e = prompt("Enter character you want to check at end of string");
+        document.write("endsWith = "+text.endsWith(e));//Enter character you want to check at end of string
+
+        let text = "Hello World, welcome to the universe.";//Check if a string includes "world":
+        let result = text.includes("world", 12);    //string.includes(searchvalue, start)
+
+        let t = "Hello world, welcome to the universe.";
+        t.indexOf("e"); //The indexOf() method returns the position of the first occurrence of a value in a string.
+
+        let te = "Hello planet earth, you are a great planet.";
+        let re = te.lastIndexOf("Planet");//The lastIndexOf() method searches the string from the end to the beginning.
+
+        let text = "The rain in SPAIN stays mainly in the plain";//The match() method returns null if no match is found.
+        text.match("ain");//The match() method matches a string against a regular expression **
+
+        let text = "Hello world!";
+        let result = text.repeat(4);//The repeat() method returns a string with a number of copies of a string.
+
+        let text = "Visit Microsoft!";
+        let result = text.replace("Microsoft", "hello");//The replace() method searches a string for a value or a regular expression.
+
+        let text = "Mr. Blue has a blue house";
+        let position = text.search("blue");//The search() method returns the index (position) of the first match.
+
+        let text = "How are you doing today?";//The split() method returns the new array.
+        const myArray = text.split(" ");//The split() method splits a string into an array of substrings.
+
+        let text = "Hello world!";//The substr() method does not change the original string.//string.substr(start, length)
+        let result = text.substr(1, 4);//The substr() method extracts a part of a string.
+
+        let text = "Hello world!";
+        let result = text.substring(1, 4);//The substring() method extracts characters, between two indices (positions), from a string, and returns the substring.
+
+        let text = "Hello World!";
+        let result = text.toString();//The toString() method can be used to convert a string object into a string.
+
+        let text = "       Hello World!        ";
+        let result = text.trim();//The trim() method removes whitespace from both sides of a string.
+    </script>
+</body>
+</html>

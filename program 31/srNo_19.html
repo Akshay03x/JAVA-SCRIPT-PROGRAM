@@ -1,0 +1,26 @@
+<!-- 19. WAP to read an array from user and sort them in ascending order (without using inbuilt function) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr=[1,5,3,6,3,9];
+
+        for(i=0;i<arr.length;i++){//outer loop
+            for(j=1;j<arr.length-i-1;j++){// logic of last character palacing in last
+                if(arr[j]>arr[j+1]){
+                    temp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }
+            }
+        }
+        document.write(arr);    
+    </script>
+</body>
+</html>

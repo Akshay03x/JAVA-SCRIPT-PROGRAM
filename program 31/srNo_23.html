@@ -1,0 +1,27 @@
+<!-- 23. WAP to change background color on click of button. -->
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	
+	<body style = "text-align:center;">
+		<h1 style = "color:green;" ></h1>
+		<button onclick = "Run()">Click here</button>
+		
+		<p id = "DOWN" style ="color:green; font-size: 20px; font-weight: bold;"></p>
+		
+		<script>
+			var el_down = document.getElementById("DOWN");
+			function changeColor(color) {
+				document.body.style.background = color;//set color
+			}
+			
+			function Run() {
+				changeColor('yellow'); //function call for change background
+				el_down.innerHTML = "Background Color changed";// html
+			}		
+		</script>
+	</body>
+</html>					

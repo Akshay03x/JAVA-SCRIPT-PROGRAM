@@ -1,0 +1,252 @@
+<!-- 22. WAP using HTML, CSS, JavaScript to design advance calculator with GUI. -->
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Calculator</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+
+    <div class="container-fluid"> 
+        <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <!-- start of header section -->
+            <div class="row header">
+            <div class="col-md-2">
+                <span class="glyphicon glyphicon glyphicon-menu-hamburger"></span>
+            </div>
+            <div class="col-md-8">
+                <p>Calculator</p>
+            </div>
+            <div class="col-md-2">
+                <span class="glyphicon glyphicon glyphicon-cog"></span>
+            </div>
+            </div> <!-- header div -->
+            <!-- end of header section -->
+            <!-- start of textbox -->
+            <div class="row teaxtbox">
+            <div class="col-md-12 padding-reset">
+                <input type="text" name="" value="" id="screen">
+            </div>
+            </div>
+            <!-- end of textbox -->
+
+            <!-- start of button design -->
+            <div class="row commonbutton">
+            <div class="col-md-3">
+                <button onclick="number2('sin')">sin</button>
+                </div>
+                <div class="col-md-3">
+                <button onclick="number2('cos')">cos</button>
+                </div>
+                <div class="col-md-3">
+                <button onclick="number2('(')">(</button>
+                </div>
+                <div class="col-md-3">
+                <button onclick="number2(')')">)</button>
+                </div>
+
+                <div class="col-md-3">
+                    <button onclick="number2('log')">log</button>
+                    </div>
+                    <div class="col-md-3">
+                    <button onclick="number2('root')">root</button>
+                    </div>
+                    <div class="col-md-3">
+                    <button onclick="number2('round')">round</button>
+                    </div>
+                    <div class="col-md-3">
+                    <button onclick="number2('floor')">floor</button>
+                    </div>
+
+
+            <div class="col-md-3">
+                <button onclick="number('7')">7</button>
+            </div>
+            <div class="col-md-3">
+                <button onclick="number('8')">8</button>
+            </div>
+            <div class="col-md-3">
+                <button onclick="number('9')">9</button>
+            </div>
+            <div class="col-md-3">
+                <button onclick="op('/')">/</button>
+            </div>
+
+
+            
+            <div class="col-md-3">
+                <button onclick="number('4')">4</button>
+            </div>
+            <div class="col-md-3">
+                <button onclick="number('5')">5</button>
+            </div>
+            <div class="col-md-3">
+                <button onclick="number('6')">6</button>
+            </div>
+            <div class="col-md-3">
+                <button onclick="op('*')">X</button>
+            </div>
+
+
+            
+            <div class="col-md-3">
+                <button onclick="number('1')">1</button>
+            </div>
+            <div class="col-md-3">
+                <button onclick="number('2')">2</button>
+            </div>
+            <div class="col-md-3">
+                <button onclick="number('3')">3</button>
+            </div>
+            <div class="col-md-3">
+                <button onclick="op('-')">-</button>
+            </div>
+            </div>
+
+            <div class="row conflict">
+            <div class="col-md-9">
+                <div class="row">
+                <div class="col-md-8">
+                    <button onclick="number('0')">0</button>
+                </div>
+                <div class="col-md-4">
+                    <button onclick="number('.')">.</button>
+                </div>
+                <div class="col-md-4">
+                    <button onclick="clearr()">C</button>
+                </div>
+                <div class="col-md-8">
+                    <button onclick="result()">=</button>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <button onclick="op('+')">+</button>
+            </div> 
+            <div class="col-md-3">
+            <button onclick="delet()">del</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        var newvalue=0,count=0,count2;
+        var oldvalue=0,v=0;
+
+        function number(num){
+        if(count==0){
+        var result=document.getElementById("screen");
+        result.value+=num;
+        oldvalue+=num;
+        }
+        else{
+            var result=document.getElementById("screen");
+            result.value+=num;
+            newvalue+=num;
+            }
+
+        }
+        function op(num){ 
+            var result=document.getElementById("screen");
+            if(num=="+"){
+                count=1;
+            }
+            else if(num=="-"){
+                count=2;
+            }
+            else if(num== "/"){
+                count=3;
+            }
+            else{
+                count=4;
+            }
+            result.value+=num;
+        }
+
+        function result(){
+            if(count==1){
+                v=parseInt(oldvalue)+parseInt(newvalue);
+            }
+            else if(count==2){
+                v=parseInt(oldvalue)-parseInt(newvalue);
+            }
+            else if(count==3){
+                v=parseInt(oldvalue)/parseInt(newvalue);
+            }
+            else{
+                v=parseInt(oldvalue)* parseInt(newvalue);
+            }
+
+
+            if(count2==1){
+                v=Math.sin(oldvalue*Math.PI/180);
+            }
+            if(count2==2){
+                        v=Math.cos(oldvalue*Math.PI/180);
+            }
+            if(count2==3){
+                v=Math.log(oldvalue);
+            }
+            if(count2==4){
+                v=Math.sqrt(oldvalue);
+            }
+            if(count2==5){
+                v=Math.round(oldvalue);
+            }
+            if(count2==6){
+                v=Math.floor(oldvalue);
+            }
+            var result=document.getElementById("screen");
+            result.value=v;
+            oldvalue=0;
+        }
+
+
+        function clearr(){
+            var result=document.getElementById("screen");
+            result.value="";
+        }
+
+        function delet(){
+            var result=document.getElementById("screen");
+            temp=result.value;
+            temp=temp.slice(0,-1);
+            result.value=temp;
+        }
+
+        function number2(num2){
+            var result=document.getElementById("screen");
+            if(num2=='sin'){
+                count2=1;
+            }
+            if(num2=='cos'){
+                count2=2;
+            }
+            if(num2=='log'){
+                count2=3;
+            }
+            if(num2=='root'){
+                count2=4;
+            }
+            if(num2=='round'){
+                count2=5;
+            }
+            if(count2=='floor'){
+                count2=6;
+            }
+            result.value+=num2;
+        }
+    </script>
+
+    </body>
+</html>

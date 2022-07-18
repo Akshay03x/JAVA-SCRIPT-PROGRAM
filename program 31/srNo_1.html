@@ -1,0 +1,33 @@
+<!-- 1. WAP to make simple calculator using dialogue box. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple calculator</title>
+</head>
+<body>
+    <script>
+		a=parseInt(prompt("enter a number"));      //dialogue box for value//convert into parseInt because input in string 
+		b=parseInt( prompt("enter a second number"));
+		c=prompt("enter op");    //dialogue box for operation
+
+		if(c=="add"){   //conditions for operators
+			document.write(a+b);
+		}
+		else if(c=="sub"){
+			document.write(a-b);    //print value in screen
+		}
+		else if(c=="div"){
+			document.write(a/b);
+		}
+		else if(c=='mul'){
+			document.write(a*b);
+		}
+        else{
+            document.write("wrong operation");   //for wrong operation
+        }
+	</script>
+</body>
+</html>

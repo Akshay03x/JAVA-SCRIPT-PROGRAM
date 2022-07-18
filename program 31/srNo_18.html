@@ -1,0 +1,29 @@
+<!-- 18. WAP to demonstrate use of various inbuilt function on an array like push, pop, sort. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.pop();//The pop() method removes the last element from an array
+
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.push("Kiwi");//The push() method returns the new array length
+
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        let fruit = fruits.shift();//The shift() method removes the first array element and "shifts" all other elements to a lower index.
+        //first element in array
+
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.unshift("Lemon");//The unshift() method adds a new element to an array (at the beginning)
+
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.splice(2, 0, "Lemon", "Kiwi");//The splice() method can be used to add new items to an array
+    </script>
+</body>
+</html>

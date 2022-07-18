@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            color: blue;
+            height: 500px;
+            width: 500px;
+            background-color: aqua;
+        }
+        #sub{
+            background-color: rgb(201, 21, 21);
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            left: px;
+            right: px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="sub"></div>
+    </div>
+
+    <button onclick="moveLeft()">left</button>
+    <button onclick="moveRight()">right</button>
+
+    <script>
+        x=10;
+        y=10;
+        function moveRight(){
+            mR=setInterval(moveR,10);
+            clearInterval(mL);
+        }
+        function moveLeft(){
+            mL=setInterval(moveL,10);
+            clearInterval(mR);
+        }
+        function moveR(){
+            is=document.getElementById("sub");
+            if(x>=488){
+                x=10;
+            }
+            is.style.left=x+"px";
+            x++;
+        }
+        function moveL(){ 
+            
+
+            is=document.getElementById("sub");
+            console.log("hrllo");
+            if(x<=12){
+                x=488;
+            }
+            is.style.left=x+"px";
+            x--;
+        }
+    </script>
+</body>
+</html>

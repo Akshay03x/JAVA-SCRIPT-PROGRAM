@@ -1,0 +1,25 @@
+<!-- 7. WAP to print the Fibonacci series of a number -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+		x=parseInt(prompt("enter number "));// for input 
+		a=0,b=1;//initial value of fibonacci series
+		document.write(a+","+b)
+		for( i=2;i<x;i++){ //logic of series 
+			c=a+b;
+			document.write(","+c);
+			a=b;
+			b=c;
+			
+		}
+	</script>
+</body>
+</html>
