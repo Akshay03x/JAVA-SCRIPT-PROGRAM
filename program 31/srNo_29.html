@@ -1,2 +1,50 @@
 <!-- 29. WAP to greet a user as per the current time. E.g. if anyone opens page at 08:00 am it should greet 
 GOOD Morning -->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		print current day and time
+	</title>
+</head>
+
+<body>
+	<script type="text/javascript">
+		var myDate = new Date();
+		var myDay = myDate.getDay();
+		
+		// Array of days.
+		var weekday = ['Sunday', 'Monday', 'Tuesday',
+			'Wednesday', 'Thursday', 'Friday', 'Saturday'
+		];
+		document.write("Today is : " + weekday[myDay]);
+		document.write("<br/>");
+		
+		// get hour value.
+		var hours = myDate.getHours();
+		var ampm = hours >= 12? 'pm' : 'am';
+		if(ampm=='pm'){
+			document.write("good evening");
+		}
+		else if(ampm=='pm' && hours>=10){
+			document.write("good night")
+		}
+		else if(ampm=='am'&& hours>=4){
+			document.write("good morning");
+		}
+		else{
+			document.write("good night");
+		}
+
+		hours = hours % 12;
+		// hours = hours ? hours : 12;
+		// var minutes = myDate.getMinutes();
+		// minutes = minutes < 10 ? '0' + minutes : minutes;
+		// var myTime = hours + " " + ampm + " : " + minutes +
+		// 	" : " + myDate.getMilliseconds();
+		// // document.write("\tCurrent time is : " + myTime);
+	</script>
+</body>
+
+</html>
