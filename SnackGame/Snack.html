@@ -20,26 +20,92 @@
             left: px;
             right: px;
         }
+        #food{
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            background-color: black;
+        }
     </style>
 </head>
-<body>
+<body onload="changeFood()">
     <div id="main">
         <div id="sub"></div>
+        <div id="food"></div>
     </div>
 
     <button onclick="moveLeft()">left</button>
     <button onclick="moveRight()">right</button>
+    <button onclick="moveUp()">Up</button>
+    <button onclick="moveDown()">Down</button>
 
     <script>
         x=10;
         y=10;
+        var flagR=true,flagL=true,flagU=true;flagD=true;
+        var mD,mL,mU,mR;
+
+        window.onkeypress = function(event){
+	    if(event.keyCode==37){
+		    moveLeft();
+	    }
+	    else if(event.keyCode==38){
+		    moveUp();
+	    }
+	    else if(event.keyCode==39){
+		    moveRight();
+	    }
+	    else if(event.keyCode==40){
+		    moveDown();
+	    }
+    }
         function moveRight(){
-            mR=setInterval(moveR,10);
-            clearInterval(mL);
+            clearInterval(mD);
+	        clearInterval(mU);
+	        clearInterval(mL);
+	            if(flagR){
+		            flagL=true;
+		            flagR=false;
+		            flagD=true;
+		            flagU=true;
+	                mR=setInterval(moveR,10);
+	            }
         }
         function moveLeft(){
-            mL=setInterval(moveL,10);
+            clearInterval(mD);
+	        clearInterval(mU);
+	        clearInterval(mR);
+	            if(flagL){
+		            flagL=false;
+		            flagR=true;
+		            flagD=true;
+		            flagU=true;
+	                mL=setInterval(moveL,10);
+	            }
+        }
+        function moveUp(){
+            clearInterval(mD);
+	        clearInterval(mR);
+	        clearInterval(mL);
+	            if(flagU){
+		            flagL=true;
+		            flagR=true;
+		            flagD=true;
+		            flagU=false;
+	                mU=setInterval(moveU,10);
+	            }
+        }
+        function moveDown(){
             clearInterval(mR);
+	        clearInterval(mU);
+	        clearInterval(mL);
+	            if(flagD){
+		            flagL=true;
+		            flagR=true;
+		            flagD=false;
+		            flagU=true;
+	                mD=setInterval(moveD,10);
+	            }
         }
         function moveR(){
             is=document.getElementById("sub");
@@ -50,8 +116,6 @@
             x++;
         }
         function moveL(){ 
-            
-
             is=document.getElementById("sub");
             console.log("hrllo");
             if(x<=12){
@@ -60,6 +124,33 @@
             is.style.left=x+"px";
             x--;
         }
+        function moveU(){ 
+            is=document.getElementById("sub");
+            console.log("hrllo");
+            if(y<=12){
+                y=488;
+            }
+            is.style.top=y+"px";
+            y--;
+        }
+        function moveD(){ 
+            is=document.getElementById("sub");
+            console.log("hrllo");
+            if(y>=488){
+                y=10;
+            }
+            is.style.top=y+"px";
+            y++;
+        }
+
+        function changeFood(){
+            var fd=document.getElementById("food");
+            Top=Math.random()*488;
+            Left=Math.random()*488;
+            fd.style.top=Top+"px";
+            fd.style.left=Left+"px";
+        }
+
     </script>
 </body>
 </html>
