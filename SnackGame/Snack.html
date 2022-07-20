@@ -39,108 +39,143 @@
     <button onclick="moveUp()">Up</button>
     <button onclick="moveDown()">Down</button>
 
+    <h2>score</h2>
+    <h2 id="score">0</h2>
+    <h2>Life</h2>
+    <h2 id="Life">3</h2>
+
     <script>
         x=10;
         y=10;
         var flagR=true,flagL=true,flagU=true;flagD=true;
         var mD,mL,mU,mR;
+        var Top,Left;
+        var sc=document.getElementById("score");
+        var life=document.getElementById("Life");
+        var score=-1;
+        var Life=3;
 
         window.onkeypress = function(event){
-	    if(event.keyCode==37){
-		    moveLeft();
-	    }
-	    else if(event.keyCode==38){
-		    moveUp();
-	    }
-	    else if(event.keyCode==39){
-		    moveRight();
-	    }
-	    else if(event.keyCode==40){
-		    moveDown();
-	    }
+        if(event.keyCode==37){
+            moveLeft();
+        }
+        else if(event.keyCode==38){
+            moveUp();
+        }
+        else if(event.keyCode==39){
+            moveRight();
+        }
+        else if(event.keyCode==40){
+            moveDown();
+        }
     }
+
+
+
         function moveRight(){
             clearInterval(mD);
-	        clearInterval(mU);
-	        clearInterval(mL);
-	            if(flagR){
-		            flagL=true;
-		            flagR=false;
-		            flagD=true;
-		            flagU=true;
-	                mR=setInterval(moveR,10);
-	            }
+            clearInterval(mU);
+            clearInterval(mL);
+                if(flagR){
+                    flagL=true;
+                    flagR=false;
+                    flagD=true;
+                    flagU=true;
+                    mR=setInterval(moveR,10);
+                }
         }
         function moveLeft(){
             clearInterval(mD);
-	        clearInterval(mU);
-	        clearInterval(mR);
-	            if(flagL){
-		            flagL=false;
-		            flagR=true;
-		            flagD=true;
-		            flagU=true;
-	                mL=setInterval(moveL,10);
-	            }
+            clearInterval(mU);
+            clearInterval(mR);
+                if(flagL){
+                    flagL=false;
+                    flagR=true;
+                    flagD=true;
+                    flagU=true;
+                    mL=setInterval(moveL,10);
+                }
         }
         function moveUp(){
             clearInterval(mD);
-	        clearInterval(mR);
-	        clearInterval(mL);
-	            if(flagU){
-		            flagL=true;
-		            flagR=true;
-		            flagD=true;
-		            flagU=false;
-	                mU=setInterval(moveU,10);
-	            }
+            clearInterval(mR);
+            clearInterval(mL);
+                if(flagU){
+                    flagL=true;
+                    flagR=true;
+                    flagD=true;
+                    flagU=false;
+                    mU=setInterval(moveU,10);
+                }
         }
         function moveDown(){
             clearInterval(mR);
-	        clearInterval(mU);
-	        clearInterval(mL);
-	            if(flagD){
-		            flagL=true;
-		            flagR=true;
-		            flagD=false;
-		            flagU=true;
-	                mD=setInterval(moveD,10);
-	            }
+            clearInterval(mU);
+            clearInterval(mL);
+                if(flagD){
+                    flagL=true;
+                    flagR=true;
+                    flagD=false;
+                    flagU=true;
+                    mD=setInterval(moveD,10);
+                }
         }
         function moveR(){
+            eatLoaction();
             is=document.getElementById("sub");
             if(x>=488){
                 x=10;
+               check();
             }
             is.style.left=x+"px";
             x++;
         }
-        function moveL(){ 
+        function moveL(){
+        eatLoaction(); 
             is=document.getElementById("sub");
             console.log("hrllo");
             if(x<=12){
                 x=488;
+              check();
             }
             is.style.left=x+"px";
             x--;
         }
         function moveU(){ 
+            eatLoaction();
             is=document.getElementById("sub");
             console.log("hrllo");
             if(y<=12){
                 y=488;
+                check();
             }
             is.style.top=y+"px";
             y--;
         }
         function moveD(){ 
+            eatLoaction();  
             is=document.getElementById("sub");
             console.log("hrllo");
             if(y>=488){
                 y=10;
+                check();
             }
             is.style.top=y+"px";
             y++;
+        }
+        function check(){
+              if(Life==0){
+                    document.write("game over");
+                    clearInterval(mR);
+                    clearInterval(mU);
+                    clearInterval(mL);
+                    clearInterval(mD);
+
+                }
+                else{
+                    Life--;
+                    life.innerHTML=Life;
+                }
         }
 
         function changeFood(){
@@ -149,7 +184,20 @@
             Left=Math.random()*488;
             fd.style.top=Top+"px";
             fd.style.left=Left+"px";
+            score++;
+            sc.innerHTML=score;
         }
+
+
+        function eatLoaction() {
+            is=document.getElementById("sub");
+            var fd=document.getElementById("food");
+            t1=parseInt(Top)
+            l1=parseInt(Left) 
+            if(x<=l1+20 && x>=l1-20 && y<=t1+20 && y>=t1-20 ){
+                changeFood();
+        }   
+            }
 
     </script>
 </body>
