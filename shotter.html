@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            color: blue;
+            height: 500px;
+            width: 500px;
+            background-color: aqua;
+        }
+        #food{
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            background-color: black;
+        }
+    </style>
+</head>
+<body onload="changeDiv2()">
+  
+    <div id="main">
+        <div id="food" onclick="score2()"></div>
+    </div>
+    <button onclick="changeDiv()"> start</button>
+    <h2>score</h2>
+    <h2 id="score">0</h2>
+    <h2>Life</h2>
+    <h2 id="Life">3</h2>
+ 
+    <script>
+        x=10;
+        y=10;
+        var sc=document.getElementById("score");
+        var life=document.getElementById("Life");
+        var score=0;
+        var Life=3;
+        var flag=true;
+
+        function changeDiv(){
+            flag=true;
+            c= setInterval(changeDiv2,1000);
+        }
+
+        function changeDiv2(){
+            var fd=document.getElementById("food");
+            Top=Math.random()*488; 
+            Left=Math.random()*488;
+            fd.style.top=Top+"px";
+            fd.style.left=Left+"px";
+            if(flag){
+                flag=false;
+            }
+            else{
+                flag=true;
+            }
+            life2();
+        }
+
+        function score2(){
+            score++;
+            sc.innerHTML=score;
+            clearInterval(c);
+            changeDiv2();
+            flag=true;
+            life2();
+           c=setInterval(changeDiv2,1000);
+        }
+        function life2(){
+            if(!flag){
+                Life--;
+                if(Life<=0){
+                    document.write("Bye Bye")
+                }
+                life.innerHTML=Life;
+            }
+        }
+
+    </script>
+</body>
+</html>
