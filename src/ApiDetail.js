@@ -29,7 +29,7 @@ const ApiDetail=()=>{
                     fetch(url+"/"+parms.id,{method:"DELETE"}).then(()=>{
                         navigate('/Api');
                     })
-                }}> Delete</button>
+                }}> delete</button>
                 <button className="col-md-3 m-2 btn btn-primary" onClick={()=>{
                     navigate('/AddMember/'+parms.id);
                 }}>edit</button>
